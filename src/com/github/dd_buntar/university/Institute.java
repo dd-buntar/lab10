@@ -2,6 +2,7 @@ package com.github.dd_buntar.university;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Institute {
 
@@ -20,7 +21,7 @@ public class Institute {
 		return "Institute{" +
 				"name='" + name + '\'' +
 				", address='" + address + '\'' +
-				", researches=" + Arrays.toString(researches) +
+				", researches=" + Arrays.stream(researches).map(Researcher::toString).collect(Collectors.joining(",\n\t\t\t", "[\n\t\t\t", "\n]")) +
 				'}';
 	}
 
